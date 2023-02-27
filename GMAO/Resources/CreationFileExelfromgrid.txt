@@ -1,0 +1,66 @@
+https://askcodez.com/comment-exporter-datagridview-vers-excel-a-laide-vb-net.html
+
+101ZZ10782122P004110507250
+
+3391401900522P001712009300
+
+
+
+
+Private Sub Export_Button_Click(ByVal sender As System.Object, ByVal e As 
+System.EventArgs) Handles VIEW_Button.Click
+Dim xlApp As Microsoft.Office.Interop.Excel.Application
+Dim xlWorkBook As Microsoft.Office.Interop.Excel.Workbook
+Dim xlWorkSheet As Microsoft.Office.Interop.Excel.Worksheet
+Dim misValue As Object = System.Reflection.Missing.Value
+Dim i As Integer
+Dim j As Integer
+xlApp = New Microsoft.Office.Interop.Excel.ApplicationClass
+xlWorkBook = xlApp.Workbooks.Add(misValue)
+xlWorkSheet = xlWorkBook.Sheets("sheet1")
+For i = 0 To DataGridView1.RowCount - 2
+For j = 0 To DataGridView1.ColumnCount - 1
+For k As Integer = 1 To DataGridView1.Columns.Count
+xlWorkSheet.Cells(1, k) = DataGridView1.Columns(k - 1).HeaderText
+xlWorkSheet.Cells(i + 2, j + 1) = DataGridView1(j, i).Value.ToString()
+Next
+Next
+Next
+xlWorkSheet.SaveAs("D:\vbexcel.xlsx")
+xlWorkBook.Close()
+xlApp.Quit()
+releaseObject(xlApp)
+releaseObject(xlWorkBook)
+releaseObject(xlWorkSheet)
+MsgBox("You can find the file D:\vbexcel.xlsx")
+End Sub
+
+
+
+Private Sub releaseObject(ByVal obj As Object)
+Try
+System.Runtime.InteropServices.Marshal.ReleaseComObject(obj)
+obj = Nothing
+Catch ex As Exception
+obj = Nothing
+Finally
+GC.Collect()
+End Try
+End Sub
+
+
+
+
+
+
+Using sfd as SaveFileDialog = new Save
+
+
+
+
+
+
+
+
+
+

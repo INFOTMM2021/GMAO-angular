@@ -1,0 +1,106 @@
+<section class="main-banner">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+
+        <div class="banner-content">
+          <div class="example-header">
+            <h1>Liste des demandes de travails</h1>
+            <h4><label>Rechercher : <br></label> </h4>
+            <mat-form-field>
+              <input matInput (keyup)="applyFilter($any($event.target).value)" placeholder="taper quelque chose">
+            </mat-form-field>
+          </div>
+
+          <div class="example-container mat-elevation-z8">
+            <table mat-table  [dataSource]="dataSource" matSort>
+
+              <!-- NumDem Column -->
+              <ng-container matColumnDef="NumDem">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> NumDem </th>
+                <td mat-cell *matCellDef="let dd"> {{ dd.NumDem }} </td>
+              </ng-container>
+
+
+              <!-- Contact Nature -->
+              <ng-container matColumnDef="Nature">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Nature </th>
+                <td mat-cell *matCellDef="let dd"> {{ dd.Nature }} </td>
+              </ng-container>
+              
+
+                <!-- Contact -->
+                <ng-container matColumnDef="Contact">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contact </th>
+                  <td mat-cell *matCellDef="let dd"> {{ dd.Contact }} </td>
+                </ng-container>
+              <!-- Service Description -->
+              <ng-container matColumnDef="Description">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>
+                <td mat-cell *matCellDef="let dd"> {{ dd.Description }} </td>
+              </ng-container>
+
+              <!-- Status Column -->
+              <ng-container matColumnDef="Status">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+                <td mat-cell *matCellDef="let dd"> {{ dd.Status }} </td>
+              </ng-container>
+
+              <!-- DateDem Column -->
+              <ng-container matColumnDef="DateDem">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> DateDem </th>
+                <td mat-cell *matCellDef="let dd"> {{ dd.DateDem }} </td>
+              </ng-container>
+
+              <!-- actions -->
+              <ng-container matColumnDef="Actions">
+                <mat-header-cell *matHeaderCellDef>
+                  <button mat-icon-button color="primary" (click)="navigateToAddDT()">Ajouter DT
+                   <!-- <mat-icon aria-label="Example icon-button with a heart icon">add</mat-icon>-->
+                  </button>
+                </mat-header-cell>
+
+                <mat-cell *matCellDef="let dd; let i=index;">
+                  <button mat-icon-button color="accent" (click)="NavigateToIntervention(dd)">Intervention
+                    <!--<mat-icon aria-label="Intervenant"></mat-icon>-->
+                  </button>
+
+                 <!-- <button  color="accent" (click)="NavigateToListInterv(dd)">
+                    <mat-icon aria-label="Recap">LI</mat-icon>
+                  </button>
+
+                  <button  color="accent" (click)="NavigateToListPieces(dd)">
+                    <mat-icon aria-label="Recap">LP</mat-icon>
+                  </button>    
+
+                  <button mat-icon-button color="accent" (click)="NavigateToAddPieceDemTravial(dd)">
+                    <mat-icon aria-label="Piece">P</mat-icon>
+                  </button>
+                  <button mat-icon-button color="accent" (click)="NavigateToRecapIntervention(dd)">
+                    <mat-icon aria-label="Recap">Recap</mat-icon>
+                  </button>
+
+                  <button mat-icon-button color="accent" (click)="Reports()">
+                    <mat-icon aria-label="print">RPT</mat-icon>
+                  </button>-->
+                
+
+                  <button mat-raised-button (click)="DeleteDemTravail(dd.NumDem)">
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </mat-cell>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let dd; columns: displayedColumns;" (click)="onRowClicked(dd)"></tr>
+
+            </table>
+            <mat-paginator [pageSizeOptions]="[10, 25, 50, 100]"></mat-paginator>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

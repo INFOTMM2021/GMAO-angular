@@ -1,0 +1,225 @@
+<section class="main-banner">
+  <div class="banner-content">
+    <form [formGroup]="updateDemTravail" (ngSubmit)="onFormSubmit()">
+      <h1 style="line-height: 10px;block-size: 10px;">Demande d'intervention</h1>
+      <hr>
+      <div>
+        <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+          <label>Numero Demande : </label>
+          <input type="text" appearance="fill" class="example-full-width" id="NumDem" name="NumDem"
+            formControlName="NumDem" placeholder="Numero demande" required="True">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" class="form-control">
+          <label>Status : </label>
+          <select title="Status" formControlName="Status" id="Status" required="True">
+            <option>Choisir une option</option>
+            <option value="Non Effectue">Non Effectué</option>
+            <option value="Diagnostic">Diagnostic</option>
+            <option value="En cours">En Cours</option>
+            <option value="Fin travaux">Fin travaux</option>
+            <option value="Effectue">Effectué</option>
+          </select>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+          <label>Personne/Contact : </label>
+          <input type="text" formControlName="Contact" class="example-full-width" id="Contact" name="Contact"
+            placeholder="Contact/Personne" required="True">
+        </mat-form-field>
+
+
+        <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+          <label>Arrêt machine </label>
+          <mat-checkbox formControlName="ArretMachine" id="ArretMachine" title="ArretMachine" placeholder="____________"
+            required="True">
+          </mat-checkbox>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field class="example-full-width" class="form-control" required="True">
+          <label>Nature intervention : </label>
+          <select title="Nature" formControlName="Nature" id="Nature">
+            <option [ngValue]="null">Choisir une option</option>
+            <option value="Amelioration">Amelioration</option>
+            <option value="Changement piece">Changement piece</option>
+            <option value="Consommable">Consommable</option>
+            <option value="Entretien Preventive">Entretien Préventive</option>
+            <option value="Fourniture">Fourniture</option>
+            <option value="Modification">Modification</option>
+            <option value="Preventive auto">Préventive auto</option>
+            <option value="Reparation">Reparation</option>
+            <option value="Service">Service</option>
+            <option value="Travail neuf">Travail neuf</option>
+          </select>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" class="form-control">
+          <label>Nature panne : </label>
+          <select title="NatPanne" formControlName="NatPanne" id="NatPanne" required="True">
+            <option [ngValue]="null">Choisir une option</option>
+            <option value="Electrique">Electrique </option>
+            <option value="Mecanique">Mecanique</option>
+            <option value="Autres">Autres</option>
+          </select>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" class="form-control">
+          <label>Consommable : </label>
+          <select title="Consommable" id="Consommable" formControlName="Consommable" required="True">
+            <option [ngValue]="">Choisir une option</option>
+            <option value="Changement Meule  Dérayeuse RIZZI">Changement Meule Dérayeuse RIZZI </option>
+            <option value="Changement Meule Dérayeuse MERCIER FRERES ">Changement Meule Dérayeuse MERCIER FRERES
+            </option>
+            <option value="Changement Meule Dérayeuse FLAMAR 1500">Changement Meule Dérayeuse FLAMAR 1500</option>
+            <option value="Changement Meule Dérayeuse FLAMAR BX3000">Changement Meule Dérayeuse FLAMAR BX3000</option>
+            <option value="Changement Meule Inf. et sup Refendeuse ZENIT ">Changement Meule Inf. et sup Refendeuse ZENIT
+            </option>
+            <option value="Changement Meule Inf. et sup Refendeuse SIRIO ">Changement Meule Inf. et sup Refendeuse SIRIO
+            </option>
+            <option value="Changement Cylindre lame Dérayeuse RIZZI ">Changement Cylindre lame Dérayeuse RIZZI </option>
+            <option value="Changement Cylindre lame Dérayeuse MERCIER FRERES ">Changement Cylindre lame Dérayeuse
+              MERCIER FRERES </option>
+            <option value="Changement Cylindre lame Dérayeuse FLAMAR 1500">Changement Cylindre lame Dérayeuse FLAMAR
+              1500</option>
+            <option value="Changement Cylindre lame Dérayeuse FLAMAR BX3000">Changement Cylindre lame Dérayeuse FLAMAR
+              BX3000</option>
+            <option value="Changement lame  Refendeuse ZENIT ">Changement lame Refendeuse ZENIT </option>
+            <option value="Changement lame Refendeuse SIRIO">Changement lame Refendeuse SIRIO </option>
+            <option value="Changement lame Inox  GEMATA">Changement lame Inox GEMATA </option>
+            <option value="Changement Pistolet  Pigmenteuse ">Changement Pistolet Pigmenteuse </option>
+            <option value="Ajout fils perlants  Pigmenteuse ">Ajout fils perlants Pigmenteuse </option>
+            <option value="Changement Manchon en gomme  Ponceuse BERGI 1800">Changement Manchon en gomme Ponceuse BERGI
+              1800</option>
+            <option value="Changement Manchon en gomme Ponceuse BERGI 3200">Changement Manchon en gomme Ponceuse BERGI
+              3200</option>
+            <option value="Changement Manchon en gomme Ponceuse FICINI 1900">Changement Manchon en gomme Ponceuse FICINI
+              1900</option>
+            <option value="Changement Tapis PVC  Rotopress MOSTARDINI 3000">Changement Tapis PVC Rotopress MOSTARDINI
+              3000</option>
+            <option value="Changement Tapis PVC Rotopress RG18">Changement Tapis PVC Rotopress RG18</option>
+            <option value="Changement tapis GOMME  GEMATA ">Changement tapis GOMME GEMATA</option>
+            <option value="Changement tapis FEUTRE  Metteuse au vent RM ">Changement tapis FEUTRE Metteuse au vent RM
+            </option>
+            <option value="Changement tapis FEUTRE Rotopress MOSTARDINI 3000">Changement tapis FEUTRE Rotopress
+              MOSTARDINI 3000</option>
+            <option value="Changement tapis FEUTRE Rotopress RG18">Changement tapis FEUTRE Rotopress RG18</option>
+            <option value="Changement Tapis Inf. et Sup. Palisonneuse CARTIGL">Changement Tapis Inf. et Sup.
+              Palisonneuse CARTIGL</option>
+            <option value="Changement Cylindre Lame Echarneuse OMC">Changement Cylindre Lame Echarneuse OMC</option>
+            <option value="Changement Cylindre Lame Echarneuse POLETTO">Changement Cylindre Lame Echarneuse POLETTO
+            </option>
+            <option value="Changement Cylindre gomme Echarneuse OMC">Changement Cylindre gomme Echarneuse OMC</option>
+            <option value="Changement Cylindre gomme Echarneuse POLETTO">Changement Cylindre gomme Echarneuse POLETTO
+            </option>
+          </select>
+        </mat-form-field>
+      </div>
+
+      <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+        <label>Description : </label>
+        <input matInput formControlName="Description" class="example-full-width" id="Description" name="Description"
+          placeholder="____________">
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+        <label>Centre cout : </label>
+        <input matInput type="text" appearance="fill" class="example-full-width" id="CentreCout" name="CentreCout"
+          formControlName="CentreCout" placeholder="____________" required="True">
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+        <label>Travaux effectué : </label>
+        <input matInput formControlName="TEffect" class="example-full-width" id="TEffect" name="TEffect"
+          placeholder="____________" required="True">
+      </mat-form-field>
+      <div>
+
+        <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+          <label>Date Demande : </label>
+          <input matInput type="date" class="example-full-width" id="DateDem" formControlName="DateDem" required="True">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+          <label>Date debut intervention : </label>
+          <input matInput type="date" class="example-full-width" placeholder="date debut intervention" id="DateDInter"
+            formControlName="DateDInter" required="True">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+          <label>Date estime : </label>
+          <input matInput type="date" class="example-full-width" placeholder="date estime" id="DateClo"
+            formControlName="DateClo" required="True">
+        </mat-form-field>
+
+      </div>
+
+      <div class="form-group row">
+        <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+          <label>Date prev : </label>
+          <input matInput type="date" class="example-full-width" placeholder="date prevu" id="DatePreClo"
+            formControlName="DatePreClo" required="True">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+          <label>Date souhait : </label>
+          <input matInput type="date" class="example-full-width" placeholder="date souhaite" id="DateSouh"
+            formControlName="DateSouh" required="True">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+          <label>Date fin travaux : </label>
+          <input matInput type="date" class="example-full-width" placeholder="date fin travaux" id="DateFinT"
+            formControlName="DateFinT" required="True">
+        </mat-form-field>
+
+        <div class="col-sm-10">
+          <label>Employe liste : </label>
+          <select #empp (change)="SelectedEmp($event)" [(ngModel)]="selectedValue" title="Intervenant"
+            formControlName="Intervenant" id="Intervenant1" class="form-control" name="Intervenant">
+            <option [value]="null" selected="true">--Choisir un ou plusieurs employes--</option>
+            <option *ngFor="let emp of employeList" [value]="emp.Matricule +' ' +emp.Nom +' ' +emp.Prenom"> {{ emp.Nom }} {{emp.Prenom}} : {{emp.Matricule}} {{emp.Categorie}} </option>
+          </select>
+        </div>
+
+      </div>
+      <hr>
+
+      <section>
+        <form [formGroup]="Addintervention" (ngSubmit)="onFormSubmit()"> 
+          <h2>Ajout main d'oeuvre</h2>
+
+          <div>
+            <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+              <label>Matricule intervenant : </label>
+              <input matInput class="form-control" type="text" appearance="fill" class="example-full-width"
+                id="Matricule" name="Matricule" formControlName="Matricule" placeholder="____________"
+                [value]="selectedValue">
+            </mat-form-field>         
+
+          </div>
+          <div>
+            <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+              <label>Numero Demande : </label>
+              <input matInput type="text" appearance="fill" class="example-full-width" id="NumDemInterv"
+                name="NumDemInterv" formControlName="NumDem" placeholder="____________" required="True">
+            </mat-form-field>
+          
+          <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+            <label>Intervenant : </label>
+            <input matInput class="form-control" type="text" appearance="fill" class="example-full-width"
+              id="Intervenant" name="Intervenant" formControlName="Intervenant" placeholder="____________" [value]="selectedValue">
+          </mat-form-field>
+        </div>
+        </form>
+      </section>
+
+
+      <div class="container-upload">
+        <button mat-button type="submit">Ajouter</button>
+        <button mat-button type="reset">Annuler</button>
+        <button mat-button type="">Imprimer</button>
+      </div>
+    </form>
+  </div>
+</section>
+

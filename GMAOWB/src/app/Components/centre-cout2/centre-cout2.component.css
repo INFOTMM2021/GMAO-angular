@@ -1,0 +1,32 @@
+.example-tree-progress-bar {
+    margin-left: 30px;
+  }
+  
+  .mat-tree-node {
+    padding: 10;
+    white-space: nowrap;
+  }
+  span.nodetree {
+    color: #99b3ff;
+    text-decoration:underline;
+    cursor:pointer;
+  }
+  span.nodetree:hover { 
+    color:#4676b9; 
+  }
+
+  span.nodetreeInv{
+  visibility: hidden;
+  }
+  button{
+    font-weight:400;
+    color:#28a3a7;
+    margin-left: 15px;
+    line-height: 10px;
+    border-width: 0.05cqb;
+  }
+  
+  label{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 18px;
+  }

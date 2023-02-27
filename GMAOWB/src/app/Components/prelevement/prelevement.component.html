@@ -1,0 +1,21 @@
+<!--<ejs-grid #grid [dataSource]='data1' [editSettings]='editSettings' [toolbar]='toolbar' allowPaging="true" height="320"> 
+    <e-columns> 
+        <e-column field='NumMvt' headerText='Num Mvt' isPrimaryKey=true width='150'></e-column> 
+        <e-column field='CodePiece' headerText='CodePiece' width='150' textAlign='Right'></e-column>
+        <e-column field='Type' headerText='Type' width='150'></e-column>  
+    </e-columns> 
+</ejs-grid> 
+
+
+
+<button (click)="addRow()">Insert New Row</button>
+-->
+
+<ag-grid-angular [rowData]="data1$ | async" 
+                style="width: fill;height: 600px;" 
+                [columnDefs]="columsDefs"                 
+                [defaultColDef]="defaultColDef"
+                (gridReady)="onGridReady($event)"   
+                class="ag-theme-apline-dark"
+                  [gridOptions]="gridOptions">
+</ag-grid-angular>

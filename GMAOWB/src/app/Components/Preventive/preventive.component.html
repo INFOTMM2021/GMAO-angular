@@ -1,0 +1,76 @@
+<form [formGroup]="prev" (ngSubmit)="onFormSubmit()">
+<h1> Fiche preventive </h1>
+
+  <!--<mat-form-field matInput class="example-full-width" appearance="fill" class="form-control">
+    <label>Code Preventive : </label>
+    <input matInput type="text" id="CodePrev" formControlName="CodePrev" class="form-control" class="example-full-width"  name="CodePrev" matInput
+      placeholder="Code Prev..">
+  </mat-form-field>-->
+
+    <mat-form-field matInput class="example-full-width" appearance="fill" class="form-control">
+      <label>Description : </label>
+      <input matInput type="text" id="Description" formControlName="Description" class="form-control" class="example-full-width" name="Description" matInput
+        placeholder=".......">
+    </mat-form-field>
+
+    <mat-form-field matInput class="example-full-width" class="form-control">
+        <label>Type intervention : </label>
+        <select title="TypeIntervention" formControlName="TypeIntervention">
+          <option [ngValue]="null" disabled>Choisir une option</option>
+          <option value="Mecanique">Mecanique</option>
+          <option value="Electrique">Electrique</option>
+        </select>
+      </mat-form-field>
+
+    <div class="container-upload">
+        <button class="btn btn-primary" type="submit">Ajouter</button>
+        <button class="btn btn-primary" type="reset" onclick="ClearForm()">Annuler</button>
+    </div>
+
+
+</form>
+
+<!--<section class="main-banner">
+<legend>Liste preventives
+    <div class="example-header">
+        <h4><label>Rechercher : <br></label> </h4>
+        <mat-form-field>
+          <input matInput (keyup)="applyFilter($any($event.target).value)" placeholder="taper quelque chose">
+        </mat-form-field>
+      </div>
+
+      <div class="example-container mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+
+          <ng-container matColumnDef="CodePrev">
+            <th mat-header-cell *matHeaderCellDef> CodePrev </th>
+            <td mat-cell *matCellDef="let dd"> {{ dd.CodePrev }} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="Description">
+            <th mat-header-cell *matHeaderCellDef> Description </th>
+            <td mat-cell *matCellDef="let dd"> {{ dd.Description }} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="TypeIntervention">
+            <th mat-header-cell *matHeaderCellDef> TypeIntervention </th>
+            <td mat-cell *matCellDef="let dd"> {{ dd.TypeIntervention }} </td>
+          </ng-container>
+
+       
+          <ng-container matColumnDef="Actions">
+            <mat-cell *matCellDef="let dd; let i=index;" >
+              <button mat-icon-button color="accent"><mat-icon aria-label="Edit">edit</mat-icon></button>
+              <button (click)="DeletePrev(dd.CodePrev)"><mat-icon aria-label="Delete">delete</mat-icon></button>
+            </mat-cell>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let dd; columns: displayedColumns;"></tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[10, 25, 50, 100]"></mat-paginator>
+      </div>
+
+
+    </legend>
+</section>
+-->

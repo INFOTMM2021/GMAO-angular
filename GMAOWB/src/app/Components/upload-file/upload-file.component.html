@@ -1,0 +1,65 @@
+<section class="main-banner">
+  <div class="container-fluid">
+
+    <div class="col-md-12">
+      <div class="banner-content">
+
+        <div class="banner-caption">
+
+          <div class="scrollmenu">
+            <a href="http://localhost:4200/addPiece"> Fiche piece </a>
+            <a href="http://localhost:4200/listPieces">Liste des pieces</a>
+            <a href="http://localhost:4200/files">Documents techniques </a>
+            <a href="http://localhost:4200/compteurEq">Compteurs equipements</a>
+            <a href="http://localhost:4200/listPreventive">Liste des préventives</a>
+            <a href="http://localhost:4200/parametrePreventive">Parametres préventives </a>
+            <a href="http://localhost:4200/addCentreCout">Fiche Centre cout </a>
+            <a href="http://localhost:4200/listCentreCout">Liste Centre cout </a>
+          </div>
+
+        </div>
+<h1>Ajout fichier piéce</h1>
+        <form [formGroup]="uploadF" (ngSubmit)="onFormSubmit()">
+
+          <mat-form-field class="example-full-width" appearance="fill"  class="form-control">
+            <label>Code Document : </label>
+            <input type="text" id="" class="example-full-width" class="form-control" id="CodeDocument" name="CodeDocument" matInput
+              placeholder="....." formControlName="CodeDocument">
+          </mat-form-field>
+
+
+
+
+          <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+            <label>Code Equipement : </label>
+            <input type="text" id="CodeEquipement"  class="form-control" id="CodeEquipement" name="CodeEquipement" matInput
+              placeholder="....." formControlName="CodeEquipement">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="form-control">
+            <label>Description : </label>
+            <input type="text" id="Description" class="example-full-width" class="form-control" id="Description" name="Description" matInput
+              placeholder="......." formControlName="Description">
+          </mat-form-field>
+          <div>
+            <mat-form-field  appearance="fill" class="form-control">
+              <label>extention file: </label>
+              <input type="text" id="ExtentionFile" class="example-full-width" id="ExtentionFile" name="ExtentionFile"
+                matInput placeholder="......." formControlName="ExtentionFile" class="form-control">
+            </mat-form-field>
+          <br>
+
+              
+                <button type="submit" class="button upload" (click)="inputFile.click()">Choisir un fichier</button>
+                <input name="file" id="file" (change)="uploadFile($event)" type="file" #inputFile hidden>
+              
+
+      <button (click)="FileList()">acceder à la liste des fichiers</button>
+    </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+</section>

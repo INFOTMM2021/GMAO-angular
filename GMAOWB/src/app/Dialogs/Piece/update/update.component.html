@@ -1,0 +1,172 @@
+
+<div class="container">
+    <h3 mat-dialog-title>Modifier la piece : {{data.CodePiece}}</h3>
+  
+    <form class="mat-dialog-content" (ngSubmit)="onFormSubmit()" #formControl="ngForm" [formGroup]="updatefrm">
+  
+      <div>
+        <mat-form-field color="accent">
+            <label>Code piece : </label>
+          <input matInput #input class="form-control" formControlName="CodePiece" [(ngModel)]="data.CodePiece" name="CodePiece" ng-disabled>
+        </mat-form-field>
+      </div>
+  
+      <!--Textarea for demo purposes-->
+      <div>
+        <mat-form-field color="accent">
+            <label>Designation : </label>
+          <textarea matInput #input class="form-control" formControlName="Designation" type="text" [(ngModel)]="data.Designation" name="Designation" required ></textarea>
+        </mat-form-field>
+      </div>
+  
+      <div>
+        <mat-form-field color="accent">
+            <label>Unite : </label>
+          <input matInput #input class="form-control" formControlName="Unite"   type="text" [(ngModel)]="data.Unite" name="Unite" required>
+        </mat-form-field>
+      </div>
+      
+      
+        <mat-form-field color="accent" >
+            <label>Ancien Code Piece : </label>
+          <input matInput #input class="form-control" type="text" formControlName="AnCode" [(ngModel)]="data.AnCode" name="AnCode" required >
+         
+        </mat-form-field>
+      
+  
+
+  
+      <div>
+        <mat-form-field color="accent" >
+            <label>Code Fournisseur : </label>
+          <input matInput class="form-control" type="text" formControlName="CodeFournisseur" [(ngModel)]="data.CodeFournisseur" name="CodeFournisseur" >
+        </mat-form-field>
+      </div>
+  
+
+
+
+      <div>
+        <mat-form-field color="accent">
+            <label>Marque : </label>
+          <input matInput class="form-control" type="text" formControlName="Marque" [(ngModel)]="data.Marque" name="Marque" >
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field color="accent" >
+            <label>Machine : </label>
+          <input matInput class="form-control" type="text" formControlName="Machine" [(ngModel)]="data.Machine" name="Machine" >
+        </mat-form-field>
+      </div>
+
+      <div >
+        <mat-form-field color="accent">
+            <label>Numero serie : </label>
+          <input matInput class="form-control" type="text" formControlName="NumSerie" [(ngModel)]="data.NumSerie" name="NumSerie" >
+        </mat-form-field>
+      </div>
+
+      <div >
+        <mat-form-field color="accent" >
+            <label>Centre Cout : </label>
+          <input matInput class="form-control" type="text" formControlName="CentreCout" [(ngModel)]="data.CentreCout" name="CentreCout" >
+        </mat-form-field>
+      </div>
+
+      <div >
+      <mat-form-field class="example-half-width" color="accent">
+        <label>Analyse 1 : </label>
+        <select title="Analyse1" formControlName="Analyse1"  >
+          <option [ngValue]="null" disabled>Choisir une option</option>
+          <option value="Importée">Importée</option>
+          <option value="Local">Local</option>
+        </select>
+      </mat-form-field>
+    </div>
+
+
+
+
+      <div >
+               <mat-form-field class="example-half-width" color="accent">
+              <label>Analyse 2 : </label>
+              <select title="Analyse2" formControlName="Analyse2">
+                <option [ngValue]="null" disabled>Choisir une option</option>
+                <option value="Mécanique">Mécanique</option>
+                <option value="Electrique">Electrique</option>
+              </select>
+            </mat-form-field>
+      </div>
+
+      <div >
+        <mat-form-field class="example-half-width" color="accent">
+            <label>Analyse 3 : </label>
+            
+          <select title="Analyse3" id="Analyse3">
+              <option [ngValue]="null" disabled>Choisir une option</option>
+              <option value="Equipements">Equipements</option>
+              <option value="Piéce standards">Piéce standards</option>
+              <option value="Pièces Spécifiques Machines">Pièces Spécifiques Machines</option>
+            </select>
+          </mat-form-field>
+      </div>
+
+
+
+ 
+
+      <div >
+        <mat-form-field color="accent">
+            <label>quantité de stock : </label>
+          <input matInput class="form-control" type="text" formControlName="QteStock"  [(ngModel)]="data.QteStock" name="QteStock" >
+        </mat-form-field>
+      </div>
+
+      <div >
+        <mat-form-field class="example-half-width" appearance="fill">
+          <label>Date d'achat : </label>
+          <input matInput  class="form-control" type="date" id="DateAchat" formControlName="DateAchat" class="example-half-width" name="DateAchat">
+        </mat-form-field>
+      </div>
+
+      <div >
+        <mat-form-field class="example-half-width" appearance="fill" color="accent">
+          <label>Date fabrication : </label>
+          <input matInput class="form-control" type="date"  name="DateFabrication" formControlName="DateFabrication" class="example-half-width" id="DateFabrication">
+        </mat-form-field>
+      </div>
+
+
+      <div class="form">
+        <mat-form-field color="accent" >
+            <label>Stock alerte : </label>
+          <input matInput class="form-control" type="text" formControlName="StockAlerte" [(ngModel)]="data.StockAlerte" name="StockAlerte" >
+        </mat-form-field>
+      </div>
+
+      <div >
+        <mat-form-field color="accent">
+            <label>Quantite commande : </label>
+          <input matInput class="form-control" type="text" formControlName="QteCmd" [(ngModel)]="data.QteCmd" name="QteCmd" >
+        </mat-form-field>
+      </div>
+
+    
+
+      <div>
+        <mat-form-field color="accent" >
+            <label>Prix d'achat piece :</label>
+          <input matInput class="form-control" formControlName="PAchat" type="text" [(ngModel)]="data.PAchat" name="PAchat" >
+        </mat-form-field>
+      </div>
+
+
+  
+      <div mat-dialog-actions>
+        <button mat-button type="submit"  >Save</button>
+        <button mat-button (click)="onNoClick()" tabindex="-1" type="reset">Cancel</button>
+      </div>
+    </form>
+  </div>
+  

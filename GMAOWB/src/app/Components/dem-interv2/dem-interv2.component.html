@@ -1,0 +1,189 @@
+<!--<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+  {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+</button>-->
+
+
+<mat-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup" label="Interventions">
+    <form [formGroup]="updateDemTravail" (ngSubmit)="onFormSubmit()">
+
+      <div>
+        <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+        <label>Numero Demande : </label>
+        <input matInput type="text" appearance="fill"  id="NumDem" name="NumDem" formControlName="NumDem" placeholder="Numero demande" required="True">
+        </mat-form-field>
+        
+          <mat-form-field appearance="fill">
+            <mat-label>Choisir une option</mat-label>
+            <mat-select title="Status" formControlName="Status" id="Status" required="True">
+              <mat-option value="Non Effectue">Non Effectué</mat-option>
+              <mat-option value="Diagnostic">Diagnostic</mat-option>
+              <mat-option value="En cours">En Cours</mat-option>
+              <mat-option value="Fin travaux">Fin travaux</mat-option>
+              <mat-option value="Effectue">Effectué</mat-option>
+            </mat-select>
+          </mat-form-field>
+      
+          <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+          <mat-label>Personne/Contact : </mat-label>
+          <input matInput type="text" formControlName="Contact" id="Contact" name="Contact"
+          placeholder="Contact/Personne" required="True"/>
+        </mat-form-field>
+               
+          <mat-label>Arrêt machine </mat-label>
+          <mat-checkbox formControlName="ArretMachine" id="ArretMachine" title="ArretMachine"
+            required="True">
+          </mat-checkbox>
+        </div>
+
+        <div>
+        <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+          <label>Description : </label>
+          <input matInput formControlName="Description" class="example-full-width" id="Description" name="Description"
+            placeholder="____________">
+        </mat-form-field>
+     
+        <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+          <label>Date souhait : </label>
+          <input matInput type="date" class="example-full-width" placeholder="date souhaite" id="DateSouh"
+            formControlName="DateSouh" required="True">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+          <label>Date fin travaux : </label>
+          <input matInput type="date" class="example-full-width" placeholder="date fin travaux" id="DateFinT"
+            formControlName="DateFinT" required="True">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+          <label>Date debut intervention : </label>
+          <input matInput type="date" class="example-full-width" placeholder="date debut intervention" id="DateDInter"
+            formControlName="DateDInter" required="True">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+          <label>Date estime : </label>
+          <input matInput type="date" class="example-full-width" placeholder="date estime" id="DateClo"
+            formControlName="DateClo" required="True">
+        </mat-form-field>
+
+     
+
+     
+        <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+          <label>Date prev : </label>
+          <input matInput type="date" class="example-full-width" placeholder="date prevu" id="DatePreClo"
+            formControlName="DatePreClo" required="True">
+        </mat-form-field>
+  
+      </div>     
+      
+
+      <div class="form-group row">
+        <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+          <label>Travaux effectué : </label>
+          <textarea matInput formControlName="TEffect" class="example-full-width" id="TEffect" name="TEffect"
+            placeholder="____________" required="True"></textarea>
+        </mat-form-field>
+      </div>
+    </form>
+    <div>
+      <button mat-button matStepperNext>Suivant</button>
+    </div>
+  </mat-step>
+
+
+  <mat-step [stepControl]="thirdFormGroup" label="Ajout des pieces">
+    <form [formGroup]="AddDempiece" (ngSubmit)="onFormSubmit()">
+
+      <div class="col-sm-10">
+        <label>Pieces liste : </label>
+        <select #listPiecesCpD (change)="SelectedPiece($event)" [(ngModel)]="selectedValueP" title="PieceInterv"
+           id="PieceInterv"  name="PieceInterv" >
+          <option [value]="null" selected="true">--Choisir une piece--</option>
+          <option *ngFor="let emp of pieceList" [ngValue]="emp.CodePiece + ' ' + emp.Designation"> {{emp.CodePiece}}  {{ emp.Designation }}
+             </option>
+        </select>
+      </div>
+      
+        <div>
+
+          <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+            <label>Code Piece : </label>
+            <input matInput type="text" appearance="fill" class="example-full-width" id="CodePiece" name="CodePiece"
+              formControlName="CodePiece" placeholder="____________" [value]="selectedValueP">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+            <label>Designation : </label>
+            <input matInput type="text" appearance="fill" class="example-full-width" id="Designation"
+              name="Designation" formControlName="Designation" placeholder="____________" [value]="selectedValueP">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+            <label>Quantite Demandé : </label>
+            <input matInput type="text" appearance="fill" class="example-full-width" id="QteDem" name="QteDem"
+              formControlName="QteDem" placeholder="____________" required>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+            <label>Numero Demande : </label>
+            <input matInput type="text" appearance="fill" class="example-full-width" id="NumDemP" name="NumDem"
+              formControlName="NumDem" placeholder="____________" required>
+          </mat-form-field>
+        </div>
+
+      <div>
+        <button mat-button matStepperPrevious>Retour</button>
+        <button mat-button matStepperNext>Suivant</button>
+      </div>
+    </form>
+  </mat-step>
+
+
+  <mat-step [stepControl]="secondFormGroup" label="Finalisation">
+    <form [formGroup]="Addintervention" (ngSubmit)="onFormSubmit()">
+      <ng-template matStepLabel>Ajout d'intervenant</ng-template>
+      <div class="col-sm-10">
+        <label>Employe liste : </label>
+        <select #empp (change)="SelectedEmp($event)" [(ngModel)]="selectedValue" title="Intervenant1" id="Intervenant1" name="Intervenant1">
+          <option>--Choisir un ou plusieurs employes--</option>
+          <option *ngFor="let emp of employeList" [value]="emp.Matricule + ' ' +emp.Nom + ' ' +emp.Prenom"> {{ emp.Nom }} {{emp.Prenom}} : {{emp.Matricule}} {{emp.Categorie}} </option>
+        </select>
+      </div>
+     
+          <h2>Ajout main d'oeuvre</h2>
+          <div>
+            <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+              <label>Matricule intervenant : </label>
+              <input matInput class="form-control" type="text" appearance="fill" class="example-full-width"
+                id="Matricule" name="Matricule" formControlName="Matricule" [value]="selectedValue">
+            </mat-form-field>   
+
+            <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+              <label>Intervenant : </label>
+              <input matInput class="form-control" type="text" appearance="fill" class="example-full-width"
+                id="Intervenant" name="Intervenant" formControlName="Intervenant" [value]="selectedValue">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+              <label>Numero Demande : </label>
+              <input matInput  type="text" appearance="fill" class="example-full-width" id="NumDemInterv"
+                name="NumDemInterv" formControlName="NumDem">
+            </mat-form-field>
+          
+        </div>
+        
+    <div>
+      <button mat-button matStepperPrevious>Retour</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+      <button mat-button >Valider</button>
+    </div>
+  </form>
+  </mat-step>
+
+</mat-stepper>
+
+
+
+
+

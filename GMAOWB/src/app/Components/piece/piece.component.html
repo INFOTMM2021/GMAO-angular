@@ -1,0 +1,193 @@
+<section class="main-banner">
+  <div class="banner-content">
+    <div class="banner-caption">
+      <div class="scrollmenu">
+        <a href="http://localhost:4200/addPiece"> Fiche piece </a>
+        <a href="http://localhost:4200/listPieces">Liste des pieces</a>
+        <a href="http://localhost:4200/files">Documents techniques </a>
+        <a href="http://localhost:4200/compteurEq">Compteurs equipements</a>
+        <a href="http://localhost:4200/listPreventive">Liste des préventives</a>
+        <a href="http://localhost:4200/parametrePreventive">Parametres préventives </a>
+        <a href="http://localhost:4200/addCentreCout">Fiche Centre cout </a>
+        <a href="http://localhost:4200/listCentreCout">Liste Centre cout </a>
+
+      </div>
+    </div>
+
+    <form [formGroup]="AddPiece" (ngSubmit)="onFormSubmit()">
+<h1>Fiche piéce</h1>
+
+      <div>
+        <label>Centre cout : </label>
+        <button (click)="NavigatePieceToCC()"> Choisisser Centre Cout </button>
+        <br>
+        <mat-form-field class="example-full-width" appearance="fill" class="form-control">  
+          <input matInput class="form-control" type="text" appearance="fill" class="example-full-width" id="CentreCout"
+            name="CentreCout" formControlName="CentreCout" placeholder="_________________________">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+          <label>Code piéce : </label>
+          <input matInput class="form-control" formControlName="CodePiece" class="example-full-width" id="CodePiece"
+            name="CodePiece" placeholder="_________________________">
+        </mat-form-field>
+
+
+        <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+          <label>Désignation : </label>
+          <input matInput class="form-control" formControlName="Designation" id="Designation" class="example-full-width"
+            id="Designation" name="Designation" placeholder="_________________________">
+        </mat-form-field>
+      </div>
+
+      <div class="form-group row">
+
+        <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+          <label>Ancien code : </label>
+          <input matInput class="form-control" type="text" id="AncienCode" class="example-full-width"
+            formControlName="AnCode" placeholder="_________________________">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+          <label>Unite : </label>
+          <input matInput class="form-control" type="text" id="Unite" class="example-full-width" formControlName="Unite"
+            placeholder="_________________________">
+        </mat-form-field>
+
+
+        <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+          <label>Code fournisseur : </label>
+          <input matInput class="form-control" type="text" id="CodeFournisseur" formControlName="CodeFournisseur"
+            placeholder="___________________">
+        </mat-form-field>
+      </div>
+
+      <!--<mat-form-field class="example-full-width" appearance="fill" class="form-control">
+        <label>CodeCC : </label>
+        <input matInput class="form-control" type="text" id="CodeCC" class="example-full-width" formControlName="CodeCC"
+          placeholder="___________________">
+      </mat-form-field>-->
+
+
+      <div class="form-group row">
+        <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+          <label>Date d'achat : </label>
+          <input matInput class="form-control" title="DateAchat" placeholder="Date Achat" type="date" id="DateAchat"
+            class="example-full-width" name="DateAchat" formControlName="DateAchat" MatFormFieldControl="DateAchat">
+        </mat-form-field>
+    
+        <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+          <label>Date fabrication : </label>
+          <input matInput class="form-control" type="date" class="example-full-width" placeholder="date Fabrication"
+            id="DateFabrication" formControlName="DateFabrication" MatFormFieldControl="DateFabrication">
+        </mat-form-field>
+      </div>
+
+      <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+        <label>Marque : </label>
+        <input matInput class="form-control" type="text" id="Marque" name="Marque" formControlName="Marque"
+          placeholder="___________________" MatFormFieldControl="Marque">
+      </mat-form-field>
+
+
+      <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+        <label>Machine : </label>
+        <input matInput class="form-control" type="text" class="example-full-width" id="Machine" name="Machine"
+          formControlName="Machine" MatFormFieldControl="Machine" placeholder="____________________">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+        <label>Numéro serie : </label>
+        <input matInput class="form-control" type="text" class="example-full-width" id="NumSerie" name="NumSerie"
+          formControlName="NumSerie" placeholder="____________________">
+      </mat-form-field>
+
+
+
+
+
+
+      <mat-form-field class="example-full-width" class="form-control">
+        <label>Analyse 1 : </label>
+        <select title="Analyse1" formControlName="Analyse1">
+          <option [ngValue]="null" disabled>Choisir une option</option>
+          <option value="Importee">Importée</option>
+          <option value="Local">Local</option>
+        </select>
+      </mat-form-field>
+
+
+      <mat-form-field class="example-full-width" class="form-control">
+        <label>Analyse 2 : </label>
+        <select title="Analyse2" formControlName="Analyse2">
+          <option [ngValue]="null" disabled>Choisir une option</option>
+          <option value="Mecanique">Mécanique</option>
+          <option value="Electrique">Electrique</option>
+        </select>
+      </mat-form-field>
+
+
+
+      <mat-form-field class="example-full-width" class="form-control">
+        <label>Analyse 3 : </label>
+        <select title="Analyse3" id="Analyse3" formControlName="Analyse3">
+          <option [ngValue]="null" disabled>Choisir une option</option>
+          <option value="Equipements">Equipements</option>
+          <option value="Pieces standards">Piéce standards</option>
+          <option value="Pieces Specifiques Machines">P.Spécifiques Machines</option>
+        </select>
+      </mat-form-field>
+
+
+
+
+
+
+
+      <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+        <label>Quantité du Stock : </label>
+        <input matInput type="text" class="example-full-width" id="QteStock" name="QteStock" formControlName="QteStock"
+          class="form-control" placeholder="_______________">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+        <label>Alerte stock : </label>
+        <input matInput type="text" class="example-full-width" id="StockAlerte" name="StockAlerte"
+          formControlName="StockAlerte" class="form-control" placeholder="_______________">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+        <label>Quantité commande : </label>
+        <input matInput type="text" class="example-full-width" id="QteCmd" name="QteCmd" formControlName="QteCmd"
+          class="form-control" placeholder="____________________">
+      </mat-form-field>
+
+
+
+      <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+        <label>prix d'achat : </label>
+        <input matInput type="text" class="example-full-width" id="PAchat" name="PAchat" formControlName="PAchat"
+          placeholder="______________">
+      </mat-form-field>
+
+
+
+
+
+
+
+      <div class="container-upload">
+        <mat-form-field class="example-full-width" class="form-control">
+        <button class="btn btn-primary" type="submit">Ajouter</button>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" class="form-control">
+        <button class="btn btn-primary" type="reset" onclick="ClearForm()">Annuler</button>
+      </mat-form-field>
+      </div>
+
+    </form>
+  </div>
+
+</section>

@@ -1,0 +1,36 @@
+
+.ag-theme-alpine {
+  --ag-background-color: #d1afaf;
+}
+
+.ag-theme-alpine .ag-header-cell-label {
+  font-family:'Times New Roman', Times, serif;
+    font-size: 18px;
+}
+.ag-header-cell-text {
+  font-family:'Times New Roman', Times, serif;
+    font-size: 18px;
+}
+
+.ag-row-selected {
+  background-color: #4CAF50;
+  color: #FFFFFF;
+}
+
+
+
+
+button{
+    font-weight:400;
+    color:#28a3a7;
+    margin-left: 15px;
+    line-height: 10px;
+    border-width: 0.05cqb;
+  }
+  
+  label{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 18px;
+  }
+
+

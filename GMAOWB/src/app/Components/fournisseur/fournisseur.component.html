@@ -1,0 +1,60 @@
+<section class="main-banner">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="banner-content">
+  <div class="banner-content"><h4><label>Liste des fournisseurs : <br></label> </h4></div>
+
+  <hr>
+            <div class="example-header">
+              <h4><label>Rechercher : <br></label> </h4>
+              <mat-form-field>
+                <input matInput (keyup)="applyFilter($any($event.target).value)" placeholder="taper quelque chose">
+              </mat-form-field>
+            </div>
+  
+            <div class="example-container mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+  
+  
+  
+                <!-- Code Column -->
+                <ng-container matColumnDef="No_">
+                  <th mat-header-cell *matHeaderCellDef> No_ </th>
+                  <td mat-cell *matCellDef="let dd"> {{ dd.No_ }} </td>
+                </ng-container>
+  
+                <!-- Name Column -->
+                <ng-container matColumnDef="Name">
+                  <th mat-header-cell *matHeaderCellDef> Name </th>
+                  <td mat-cell *matCellDef="let dd"> {{ dd.Name }} </td>
+                </ng-container>
+  
+                <!-- Address Column -->
+                <ng-container matColumnDef="Address">
+                  <th mat-header-cell *matHeaderCellDef> Address </th>
+                  <td mat-cell *matCellDef="let dd"> {{ dd.Address }} </td>
+                </ng-container>
+  
+  
+                <!-- Contact Column -->
+                <ng-container matColumnDef="City">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> City </th>
+                  <td mat-cell *matCellDef="let dd"> {{ dd.City }} </td>
+                </ng-container>
+  
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let dd; columns: displayedColumns;"></tr>
+  
+              </table>
+  
+              <mat-paginator [pageSizeOptions]="[10, 25, 50, 100]"></mat-paginator>
+            </div>
+  
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </section>

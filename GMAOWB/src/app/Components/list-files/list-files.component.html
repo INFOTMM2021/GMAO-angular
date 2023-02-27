@@ -1,0 +1,89 @@
+
+<section class="main-banner">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="banner-content">
+  
+            <div class="banner-caption">
+              <div class="scrollmenu">
+                <a href="http://localhost:4200/addPiece"> Fiche piece </a>
+                <a href="http://localhost:4200/listPieces">Liste des pieces</a>
+                <a href="http://localhost:4200/files">Documents techniques </a>
+                <a href="http://localhost:4200/compteurEq">Compteurs equipements</a>
+                <a href="http://localhost:4200/listPreventive">Liste des préventives</a>
+                <a href="http://localhost:4200/parametrePreventive">Parametres préventives </a>
+                <a href="http://localhost:4200/addCentreCout">Fiche Centre cout </a>
+                <a href="http://localhost:4200/listCentreCout">Liste Centre cout </a>
+              </div>
+            </div>
+  
+  
+  
+  
+            <div class="example-header">
+              <h4><label>Rechercher : <br></label> </h4>
+              <mat-form-field>
+                <input matInput (keyup)="applyFilter($any($event.target).value)" placeholder="taper quelque chose">
+              </mat-form-field>
+            </div>
+            <button (click)="FichDoc()">retour a la fiche des documents</button>
+            <div class="example-container mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+  
+               <!-- CodeEquipement Column -->
+                <ng-container matColumnDef="CodeEquipement">
+                  <th mat-header-cell *matHeaderCellDef> Code Equipement </th>
+                  <td mat-cell *matCellDef="let dd"> {{ dd.CodeEquipement }} </td>
+                </ng-container>
+  
+                <!-- CodeDocument Column -->
+                <ng-container matColumnDef="CodeDocument">
+                  <th mat-header-cell *matHeaderCellDef> CodeDocument </th>
+                  <td mat-cell *matCellDef="let dd"> {{ dd.CodeDocument }} </td>
+                </ng-container>
+  
+                <!-- Description Column -->
+                <ng-container matColumnDef="Description">
+                  <th mat-header-cell *matHeaderCellDef> Description </th>
+                  <td mat-cell *matCellDef="let dd"> {{ dd.Description }} </td>
+                </ng-container>
+  
+                <!-- DateCreation Column -->
+                <ng-container matColumnDef="DateCreation">
+                  <th mat-header-cell *matHeaderCellDef> DateCreation </th>
+                  <td mat-cell *matCellDef="let dd"> {{ dd.DateCreation }} </td>
+                </ng-container>
+  
+  
+  
+                <!-- ExtentionFile Column -->
+                <ng-container matColumnDef="ExtentionFile">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> ExtentionFile </th>
+                  <td mat-cell *matCellDef="let dd"> {{ dd.ExtentionFile }} </td>
+                </ng-container>
+  
+  
+                <!-- actions -->
+                <ng-container matColumnDef="Actions">
+                  <mat-header-cell *matHeaderCellDef>
+
+                  </mat-header-cell>
+  
+                  <mat-cell *matCellDef="let dd; let i=index;" >
+                    <button mat-icon-button color="accent">
+                      <mat-icon aria-label="Edit">Telecharger</mat-icon>
+                    </button>
+                  </mat-cell>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let dd; columns: displayedColumns;"></tr>
+              </table>
+              <mat-paginator [pageSizeOptions]="[10, 25, 50, 100]"></mat-paginator>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>

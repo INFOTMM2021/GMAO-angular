@@ -1,0 +1,88 @@
+<section class="main-banner">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+  
+          <div class="banner-content">
+            <div class="example-header">
+              <h1>Liste des mouvements :</h1>
+              <h4><label>Rechercher : <br></label> </h4>
+              <mat-form-field>
+                <input matInput (keyup)="applyFilter($any($event.target).value)" placeholder="taper quelque chose">
+              </mat-form-field>
+            </div>
+  
+  
+            <div class="example-container mat-elevation-z8">
+              <table mat-table  [dataSource]="dataSource" matSort>
+  
+                <!-- NumMvt Column -->
+                <ng-container matColumnDef="NumMvt">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> NumMvt </th>
+                  <td mat-cell *matCellDef="let dd"> {{ dd.NumMvt }} </td>
+                </ng-container>
+  
+                <!-- Type -->
+                <ng-container matColumnDef="Type">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Type </th>
+                  <td mat-cell *matCellDef="let dd"> {{ dd.Type }} </td>
+                </ng-container>
+                
+                  <!-- CodePiece -->
+                  <ng-container matColumnDef="CodePiece">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> CodePiece </th>
+                    <td mat-cell *matCellDef="let dd"> {{ dd.CodePiece }} </td>
+                  </ng-container>
+
+                <!-- QteDem -->
+                <ng-container matColumnDef="QteDem">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> QteDem </th>
+                  <td mat-cell *matCellDef="let dd"> {{ dd.QteDem }} </td>
+                </ng-container>
+  
+                <!-- QteMvt Column -->
+                <ng-container matColumnDef="QteMvt">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> QteMvt </th>
+                  <td mat-cell *matCellDef="let dd"> {{ dd.QteMvt }} </td>
+                </ng-container>
+  
+                <!-- PAchat Column -->
+                <ng-container matColumnDef="PAchat">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> PAchat </th>
+                  <td mat-cell *matCellDef="let dd"> {{ dd.PAchat }} </td>
+                </ng-container>
+                
+                <!-- PRevient Column -->
+                <ng-container matColumnDef="PRevient">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> PRevient </th>
+                     <td mat-cell *matCellDef="let dd"> {{ dd.PRevient }} </td>
+                </ng-container>
+
+
+                <!-- Actions -->
+                <ng-container matColumnDef="Actions">
+                  <mat-header-cell *matHeaderCellDef>
+                    <!--<button mat-icon-button color="primary" >
+                      <mat-icon aria-label="Example icon-button with a heart icon">add</mat-icon>
+                    </button>-->
+                  </mat-header-cell>
+                  <mat-cell *matCellDef="let dd; let i=index;">
+                    <button mat-icon-button color="accent" (click)="Reguler(dd)">Réguler</button>
+                  </mat-cell>
+
+                </ng-container>
+  
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let dd; columns: displayedColumns;"></tr>
+  
+              </table>
+              <mat-paginator [pageSizeOptions]="[10, 25, 50, 100]"></mat-paginator>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  

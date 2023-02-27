@@ -1,0 +1,105 @@
+<section class="main-banner">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="banner-content">
+  
+            <div class="example-header">
+              <h1>Listes des interventions</h1>
+              <h4><label>Rechercher : <br></label> </h4>
+              <mat-form-field>
+                <input matInput (keyup)="applyFilter($any($event.target).value)" placeholder="taper quelque chose">
+              </mat-form-field>
+            </div>
+  
+            <div class="example-container mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+  
+               
+                <ng-container matColumnDef="NumDem">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> NumDem </th>
+                  <td mat-cell *matCellDef="let dd"> {{ dd.NumDem }} </td>
+                </ng-container>
+  
+              
+                <ng-container matColumnDef="Matricule">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Matricule </th>
+                  <td mat-cell *matCellDef="let dd"> {{ dd.Matricule }} </td>
+                </ng-container>
+  
+                
+                <ng-container matColumnDef="Intervenant">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Intervenant </th>
+                  <td mat-cell *matCellDef="let dd"> {{ dd.Intervenant }} </td>
+                </ng-container>
+  
+                
+                <ng-container matColumnDef="Categorie">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Categorie </th>
+                  <td mat-cell *matCellDef="let dd"> {{ dd.Categorie }} </td>
+                </ng-container>
+  
+  
+  
+                
+                <ng-container matColumnDef="NOInter">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> N.Interv </th>
+                  <td mat-cell *matCellDef="let dd"> {{ dd.NOInter }} </td>
+                </ng-container>
+  
+                  
+                  <ng-container matColumnDef="DDebut">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> DDebut</th>
+                    <td mat-cell *matCellDef="let dd"> {{ dd.DDebut }} </td>
+                  </ng-container>
+
+               
+                <ng-container matColumnDef="DFin">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> DFin</th>
+                  <td mat-cell *matCellDef="let dd"> {{ dd.DFin }} </td>
+                </ng-container>
+  
+                
+                <ng-container matColumnDef="NHeure">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> NHeure </th>
+                  <td mat-cell *matCellDef="let dd"> {{ dd.NHeure }} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Status">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+                  <td mat-cell *matCellDef="let dd"> {{ dd.Status }} </td>
+                </ng-container>
+  
+  
+                <!-- actions -->
+                <ng-container matColumnDef="Actions">
+                  <mat-header-cell *matHeaderCellDef>
+                    <button mat-icon-button color="primary">
+                      <mat-icon aria-label="Example icon-button with a heart icon">add</mat-icon>
+                    </button>
+                  </mat-header-cell>
+  
+                  <mat-cell *matCellDef="let dd; let i=index;" >
+                    <button mat-icon-button color="accent">
+                      <mat-icon aria-label="Edit">edit</mat-icon>
+                    </button>
+  
+                    <button>
+                      <mat-icon aria-label="Delete">delete</mat-icon>
+                    </button>
+                  </mat-cell>
+                </ng-container>
+  
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let dd; columns: displayedColumns;"></tr>
+  
+              </table>
+  
+              <mat-paginator [pageSizeOptions]="[10, 25, 50, 100]"></mat-paginator>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </section>

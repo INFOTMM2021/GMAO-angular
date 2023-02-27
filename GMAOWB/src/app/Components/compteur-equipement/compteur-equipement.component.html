@@ -1,0 +1,62 @@
+<section class="main-banner">
+    <div class="container-fluid">
+  
+      <div class="col-md-12">
+        <div class="banner-content">
+  
+          <div class="banner-caption">
+  
+            <div class="scrollmenu">
+              <a href="http://localhost:4200/addPiece"> Fiche piece </a>
+              <a href="http://localhost:4200/listPieces">Liste des pieces</a>
+              <a href="http://localhost:4200/files">Documents techniques </a>
+              <a href="http://localhost:4200/compteurEq">Compteurs equipements </a>
+              <a href="http://localhost:4200/listPreventive">Liste des préventives</a>
+              <a href="http://localhost:4200/parametrePreventive">Parametres préventives </a>
+              <a href="http://localhost:4200/addCentreCout">Fiche Centre cout </a>
+              <a href="http://localhost:4200/listCentreCout">Liste Centre cout </a>
+            </div>
+          </div>
+          <hr>
+          <form [formGroup]="CompteurEquiForm" (ngSubmit)="onFormSubmit()">
+            <h1>Fiche compteur equipements</h1>
+            
+          <div class="form-group row">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <label>Code Compteur : </label>
+              <input id="CodeCompteur" class="example-full-width" id="CodeCompteur" name="CodeCompteur"
+                 matInput placeholder="  CodeCompteur" class="formControl" formControlName="CodeCompteur">
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+                <label>Unite : </label>
+                <input matInput class="form-control" formControlName="NumSerie" id="NumSerie" class="example-full-width" id="NumSerie" name="NumSerie" placeholder="  NumSerie...">
+              </mat-form-field>
+            </div>
+            
+              <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+                <label>Dernier modification : </label>
+                <input matInput type="date" class="form-control" formControlName="Dernieremodif" id="Dernieremodif" class="example-full-width" id="Dernieremodif" name="Dernieremodif" placeholder="Dernier modification...">
+              </mat-form-field>
+            
+            <div>
+              <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+                <label>Valeur : </label>
+                <input matInput class="form-control" formControlName="Valeur" id="Valeur" class="example-full-width" id="Valeur" name="Valeur" placeholder="  Valeur...">
+              </mat-form-field>
+          </div>
+        </form>
+          <div class="btn-group">
+            <button type="submit" class="btn btn-primary">Ajouter</button>
+            <button class="btn btn-primary" type="reset" >Annuler</button>
+          </div>
+
+        </div>
+      </div>
+
+    
+    </div>
+  
+  
+  </section>

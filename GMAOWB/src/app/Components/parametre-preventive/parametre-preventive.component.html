@@ -1,0 +1,63 @@
+<section class="main-banner">
+    <div class="banner-content">
+        <div class="banner-caption">
+            <div class="scrollmenu">
+                <a href="http://localhost:4200/addPiece"> Fiche piece </a>
+                <a href="http://localhost:4200/listPieces">Liste des pieces</a>
+                <a href="http://localhost:4200/files">Documents techniques </a>
+                <a href="http://localhost:4200/compteurEq">Compteurs equipements</a>
+                <a href="http://localhost:4200/listPreventive">Liste des préventives</a>
+                <a href="http://localhost:4200/parametrePreventive">Parametres préventives </a>
+                <a href="http://localhost:4200/addCentreCout">Fiche Centre cout </a>
+                <a href="http://localhost:4200/listCentreCout">Liste Centre cout </a>
+            </div>
+        </div>
+<h1>Fiche parametres préventives</h1>
+        <form [formGroup]="AddParaPrev" (ngSubmit)="onFormSubmit()">
+
+
+            <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+                <label>Code Compteur : </label>
+                <input matInput class="form-control" formControlName="CodeCompteur" class="example-full-width"
+                    id="CodeCompteur" name="CodeCompteur" placeholder="_________________________">
+            </mat-form-field>
+
+
+            <div class="form-group row">
+
+                <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+                    <label>Intervention : </label>
+                    <input matInput class="form-control" type="text" id="Intervention" class="example-full-width"
+                        formControlName="Intervention" placeholder="_________________________">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+                    <label>Chaque : </label>
+                    <input matInput class="form-control" type="text" id="Chaque" class="example-full-width"
+                        formControlName="Chaque" placeholder="_________________________">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+                    <label>Date Debut: </label>
+                    <input matInput class="form-control" type="date" id="DateDebut" formControlName="DateDebut">
+                </mat-form-field>
+
+            </div>
+
+
+
+
+            <div class="container-upload">
+                <button class="btn btn-primary" type="submit">Ajouter</button>
+                <button class="btn btn-primary" type="reset" onclick="ClearForm()">Annuler</button>
+
+            </div>
+
+
+            
+        </form>
+    </div>
+
+</section>

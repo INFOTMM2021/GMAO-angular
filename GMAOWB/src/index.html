@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <base href="/">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+  <title>GMAO: Gestion de la maintenance TMM</title>
+
+
+
+  <!-- ... -->
+  <script src="runtime-es2015.js" type="module"></script>
+  <script src="polyfills-es2015.js" type="module"></script>
+  <script src="runtime-es5.js" nomodule></script>
+  <script src="polyfills-es5.js" nomodule></script>
+  <script src="main-es2015.js" type="module"></script>
+  <script src="main-es5.js" nomodule></script>
+  
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <!-- DevExtreme theme -->
+  <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.10/css/dx.light.css">
+  <!-- DevExtreme library -->
+  <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.10/js/dx.all.js"></script>
+
+
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css">
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" src="styles/ag-grid.css"> 
+  <link rel="stylesheet" src="styles/ag-theme-alpine.css">
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/templatemo-style.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <script src="assets/vendor/bootstrap/css/bootstrap.min.css"></script>
+  <script src="assets/vendor/bootstrap/css/bootstrap.css"></script>
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/transition.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/custom.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ag-grid-community@29.0.0/styles/ag-grid.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ag-grid-community@29.0.0/styles/ag-theme-alpine.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+
+</head>
+
+<body class="is-preload mat-typography" class="dx-viewport">
+
+  <!-- Wrapper -->
+  <div id="wrapper">
+
+    <!-- Main -->
+    <div id="main">
+      <div class="inner">
+
+        <!-- Header -->
+        <header id="header">
+          <div class="logo">
+            <a href="index.html"     
+            font-family ="Times New Roman"
+            font-size="20px">TMM GMAO</a>
+          </div>
+        </header>
+
+        <app-root></app-root>
+
+      </div>
+    </div>
+
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+
+      <div class="inner">
+            <!-- Search Box -->
+            <section id="search" class="alt">
+              <form method="get" action="#">
+                <input type="text" name="search" id="search2" placeholder="Rechercher..." />
+              </form>
+            </section>
+        <!-- Menu -->
+        <nav id="menu">
+          <ul>
+            <li>
+              <span class="opener">Consultation</span>
+              <ul>
+                <li><a href="#">Fiche vie</a></li>
+                <li><a href="#">Etat stock</a></li>
+                <li><a href="#">Recap mouvement</a></li>
+                <li><a href="#">Consultation mouvement</a></li>
+                <li><a href="#">Consultation intervention</a></li>
+                <li><a href="#">Rapport activité</a></li>
+              </ul>
+            </li>
+            <li>
+              <span class="opener">Stock</span>
+              <ul>
+                <li><a href="http://localhost:4200/addPiece">Piéces</a></li>
+                <li><a href="http://localhost:4200/listFournisseur">Fournisseurs</a></li>
+                <li><a href="http://localhost:4200/mainOeuvre">main oeuvre</a></li>
+                <li><a href="http://localhost:4200/preventive">Préventive</a></li>
+                <!--<li><a href="#">Saisie compteur</a></li>
+                <li><a href="#">Intégration stock</a></li>-->
+              </ul>
+            </li>
+
+            <li>
+              <span class="opener">Maintenance</span>
+              <ul>
+                <li><a href="http://localhost:4200/demandeTravail">Ajout Demande travail</a></li>
+                <li><a href="http://localhost:4200/listDemTravail">Listes des Demandes travails</a></li>
+                <!--<li><a href="http://localhost:4200/intervention">Intervention</a></li>-->
+                <li><a href="http://localhost:4200/listInterventions">Listes des Interventions</a></li>
+                <!--<li><a href="http://localhost:4200/recapIntervention">Recap intervention</a></li>-->
+                <!--<li><a href="http://localhost:4200/listIntervByNumDem">Liste intervention-DemPiece/DemTravail</a></li>-->
+                <li><a href="#">Saisie compteur</a></li>
+              </ul>
+            </li>
+            <li>
+              <span class="opener">Mouvement réguliere</span>
+              <ul>
+                <li><a href="http://localhost:4200/regulStock">Regul stock</a></li>
+                <li><a href="http://localhost:4200/listMouvementDetails">Mouvement Reg</a></li>
+              </ul>
+            </li>
+            <li>
+              <span class="opener">Mouvement sortie</span>
+              <ul>
+                <li><a href="http://localhost:4200/prelevement">Prélevement</a></li>
+                <li><a href="#">Retour fournisseur</a></li>
+              </ul>
+            </li>
+            <li>
+              <span class="opener">Mouvement entrée</span>
+              <ul>
+                <li><a href="#">Reception</a></li>
+                <li><a href="#">Retour magasin</a></li>
+              </ul>
+            </li>
+
+
+          </ul>
+
+        </nav>
+
+      </div>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <p class="copyright">Copyright &copy; 2022 TMM : Tannerie Mégisserie du Maghreb
+      </footer>
+
+    </div>
+  </div>
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+
+  <link rel="stylesheet" src="assets/css/fontawesome.css">
+  <link rel="stylesheet" src="assets/css/templatemo-style.css">
+  <link rel="stylesheet" src="assets/css/owl.css">
+  <script src="assets/vendor/bootstrap/css/bootstrap.min.css"></script>
+  <script src="assets/vendor/bootstrap/css/bootstrap.css"></script>
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/transition.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/custom.js"></script>
+</body>
+
+</html>

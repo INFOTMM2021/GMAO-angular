@@ -1,0 +1,52 @@
+
+  .row{
+    bleed:"margin-bottom:15px;"
+  }
+  div.scrollmenu {
+    background-color: #b5a281;
+    overflow: auto;
+    white-space: nowrap;
+  }
+  
+  div.scrollmenu a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+  }
+  
+  button{
+    font-weight:400;
+    color:#28a3a7;
+    margin-left: 15px;
+    line-height: 10px;
+    border-width: 0.05cqb;
+  }
+  
+  label{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 18px;
+  }
+  
+  div.scrollmenu a:hover {
+    background-color: #777;
+  }
+  
+  div.container style{
+    padding-top:20px;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  .example-half-width {
+    width: 50%;
+  }
+  
+  button{
+    font-weight:normal;
+    color:#28a3a7;
+    margin-left: 15px;
+    line-height: 10px;
+  }

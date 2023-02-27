@@ -1,0 +1,119 @@
+<section class="main-banner">
+  <div class="banner-content">
+    <h1>Regularisation stock </h1>
+
+    
+    <form [formGroup]="RegulStock" (ngSubmit)="onFormSubmit()">
+      <div>
+        <mat-form-field class="form-control">
+          <label>Réference : </label>
+          <input matInput class="form-control" formControlName="NumMvt" class="example-full-width" id="NumMvt"
+            name="NumMvt" placeholder="__________________" [value]="[MaxNumPrelev]">
+        </mat-form-field>
+        <br>
+      </div>
+      
+      <div>
+        <label>Pieces liste : </label>
+        <select #listPiecesCpD (change)="SelectedPiece($event)" [(ngModel)]="selectedValueP" title="PieceInterv"
+          id="PieceInterv" name="PieceInterv">
+          <option [value]="null" selected="true">--Choisir une piece--</option>
+          <option *ngFor="let emp of pieceList" [ngValue]="emp.CodePiece +' '+ emp.Designation"> {{emp.CodePiece}} : {{ emp.Designation }}
+          </option>
+  
+        </select>
+      </div>
+        <div>
+
+        <mat-form-field>
+          <label>CodePiece :</label>
+          <input formControlName="CodePiece" matInput type="text" appearance="fill" class="example-full-width"
+             id="CodePieces" name="CodePiece" [value]="CodeP">
+        </mat-form-field>
+        <mat-form-field>
+          <label>Designation :</label>
+          <input formControlName="Designation" matInput type="text" appearance="fill" class="example-full-width"
+             id="Designation" name="Designation" [value]="Designation">
+        </mat-form-field>
+
+
+
+          <mat-form-field  class="form-control">
+            <label>Quantite Demandé : </label>
+            <input matInput type="text" appearance="fill" class="example-full-width" id="QteDem" name="QteDem"
+              formControlName="QteDem" required>
+          </mat-form-field>
+        
+          <mat-form-field  class="form-control">
+            <label>RefFournisseur : </label>
+            <input matInput type="text" appearance="fill" class="example-full-width" id="RefFournisseur" name="RefFournisseur"
+              formControlName="RefFournisseur" required>
+          </mat-form-field>
+
+        
+     
+        <button mat-button type="button" (click)="addItem()">Ajouter</button>&nbsp;
+        <!--<button mat-button type="reset">Annuler</button>-->
+    </div>
+    </form>
+  </div>
+</section>
+<button mat-button type="button" (click)="sendDataToBackend()">Finaliser l'ajout</button>&nbsp;
+<div class="col-md-8 mt-4 mb-4">
+  <table class="table table-bordered">
+<thead>
+  <tr>
+    <th>CodePiece</th>
+    <th>Designation</th>
+    <th>QteDem</th>
+    <th>RefFournisseur</th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor = "let item of listData">
+    <td><span>{{item.CodePiece}}</span></td>
+    <td><span>{{item.Designation}}</span></td>
+    <td><span>{{item.QteDem}}</span></td>
+    <td><span>{{item.RefFournisseur}}</span></td>
+    <td><button type="button" class="btn btn-primary" (click)="removeItem(item)">Supprimer</button></td>
+  </tr>
+</tbody>
+  </table>
+</div>
+
+
+
+
+
+
+
+
+
+       <!-- <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+          <label for="numberOfPieces">Number of Pieces</label>
+          <input type="text" name="numberOfPieces" [(ngModel)]="numberOfPieces">
+        </mat-form-field>
+      
+
+      <div *ngFor="let i of Array(numberOfPieces).fill(0).map((x, i) => i)">
+      <div *ngFor="let codepiece of codepieces.controls; let i = index">-->
+
+      <!--<label>Nombre des pieces a ajouter : </label>
+              <input matInput class="form-control" formControlName="nbrp" class="example-full-width" id="nbrp"
+                name="nbrp" placeholder="Taper le nombre des pieces a reguler" (change)="updateCodepieces()">
+              <button (change)="updateCodepieces()">ajouter un ligne</button> 
+
+      <label>Pieces liste : </label>
+      <select #listPiecesCpD (change)="SelectedPiece($event)" [(ngModel)]="selectedValueP" title="PieceInterv"
+        id="PieceInterv" name="PieceInterv">
+        <option [value]="null" selected="true">--Choisir une piece--</option>
+        <option *ngFor="let emp of pieceList" [ngValue]="emp.CodePiece"> {{emp.CodePiece}} {{ emp.Designation }}
+        </option>
+
+      </select>
+      <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+        <label>Code Piece : </label>
+        <input matInput type="text" appearance="fill" class="example-full-width" id="CodePiece" name="CodePiece"
+          formControlName="CodePiece" placeholder="____________" [value]="selectedValueP">
+      </mat-form-field>-->

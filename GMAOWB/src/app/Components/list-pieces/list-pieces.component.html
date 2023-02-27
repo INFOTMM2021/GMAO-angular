@@ -1,0 +1,111 @@
+<section class="main-banner">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="banner-content">
+
+          <div class="banner-caption">
+            <div class="scrollmenu">
+              <a href="http://localhost:4200/addPiece"> Fiche piece </a>
+              <a href="http://localhost:4200/listPieces">Liste des pieces</a>
+              <a href="http://localhost:4200/files">Documents techniques </a>
+              <a href="http://localhost:4200/compteurEq">Compteurs equipements</a>
+              <a href="http://localhost:4200/listPreventive">Liste des préventives</a>
+              <a href="http://localhost:4200/parametrePreventive">Parametres préventives </a>
+              <a href="http://localhost:4200/addCentreCout">Fiche Centre cout </a>
+              <a href="http://localhost:4200/listCentreCout">Liste Centre cout </a>
+            </div>
+          </div>
+
+
+
+
+          <div class="example-header">
+            <h1>Listes des piéces</h1>
+            <h4><label>Rechercher : <br></label> </h4>
+            <mat-form-field>
+              <input matInput (keyup)="applyFilter($any($event.target).value)" placeholder="taper quelque chose">
+            </mat-form-field>
+          </div>
+
+          <div class="example-container mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource" matSort>
+
+             <!-- Code Piece Column -->
+              <ng-container matColumnDef="CodePiece">
+                <th mat-header-cell *matHeaderCellDef> CodePiece </th>
+                <td mat-cell *matCellDef="let dd"> {{ dd.CodePiece }} </td>
+              </ng-container>
+
+              <!-- Designation Column -->
+              <ng-container matColumnDef="Designation">
+                <th mat-header-cell *matHeaderCellDef> Désignation </th>
+                <td mat-cell *matCellDef="let dd"> {{ dd.Designation }} </td>
+              </ng-container>
+
+              <!-- CentreCout Column -->
+              <ng-container matColumnDef="CentreCout">
+                <th mat-header-cell *matHeaderCellDef> Centre Cout </th>
+                <td mat-cell *matCellDef="let dd"> {{ dd.CentreCout }} </td>
+              </ng-container>
+
+              <!-- numero serie Column -->
+              <ng-container matColumnDef="NumSerie">
+                <th mat-header-cell *matHeaderCellDef> NumSerie </th>
+                <td mat-cell *matCellDef="let dd"> {{ dd.NumSerie }} </td>
+              </ng-container>
+
+
+
+              <!-- Analyse 1 Column -->
+              <ng-container matColumnDef="Analyse1">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Analyse 1 </th>
+                <td mat-cell *matCellDef="let dd"> {{ dd.Analyse1 }} </td>
+              </ng-container>
+
+
+              <!-- Analyse 2 Column -->
+              <ng-container matColumnDef="Analyse2">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Analyse 2</th>
+                <td mat-cell *matCellDef="let dd"> {{ dd.Analyse2 }} </td>
+              </ng-container>
+
+              <!-- Analyse 3 Column -->
+              <ng-container matColumnDef="Analyse3">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Analyse 3 </th>
+                <td mat-cell *matCellDef="let dd"> {{ dd.Analyse3 }} </td>
+              </ng-container>
+
+
+              <!-- actions -->
+              <ng-container matColumnDef="Actions">
+                <mat-header-cell *matHeaderCellDef>
+                  <!--<button mat-icon-button color="primary" (click)="addNew()">
+                    <mat-icon aria-label="Example icon-button with a heart icon">add</mat-icon>
+                  </button>-->
+                </mat-header-cell>
+
+                <mat-cell *matCellDef="let dd; let i=index;" >
+                  <button mat-icon-button color="accent" (click)="startEdit(i,dd, dd.CodePiece, dd.Designation,dd.AnCode,dd.Unite,dd.DateAchat,dd.DateFabrication , dd.Marque , dd.Machine,dd.NumSerie,dd.CentreCout, dd.QteStock,dd.StockAlerte,dd.QteCmd, dd.PAchat,dd.Analyse1, dd.Analyse2, dd.Analyse3)">
+                    <mat-icon aria-label="Edit">edit</mat-icon>
+                  </button>
+
+                  <button (click)="DeletePiece(dd.CodePiece)">
+                    <mat-icon aria-label="Delete">delete</mat-icon>
+                  </button>
+                </mat-cell>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let dd; columns: displayedColumns;"></tr>
+
+            </table>
+
+            <mat-paginator [pageSizeOptions]="[10, 25, 50, 100]"></mat-paginator>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>

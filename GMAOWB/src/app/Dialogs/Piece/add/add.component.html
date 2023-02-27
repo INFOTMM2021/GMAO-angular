@@ -1,0 +1,195 @@
+<div class="container">
+    <h3 mat-dialog-title>Add Piece</h3>
+  
+    <form class="mat-dialog-content" (ngSubmit)="onFormSubmit()" #formControl="ngForm" [formGroup]="AddPiece2">
+  
+      <div class="form">
+        <mat-form-field color="accent">
+            <label>Code piece : </label>
+          <input matInput #input class="form-control" type="text" formControlName="CodePiece" class="form-control" placeholder="CodePiece.." [(ngModel)]="data.CodePiece" name="CodePiece" required >
+          <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </div>
+  
+      <!--Textarea for demo purposes-->
+      <div class="form">
+        <mat-form-field color="accent">
+            <label>Designation : </label>
+          <textarea matInput #input class="form-control" type="text" formControlName="Designation" class="form-control" placeholder="Designation" [(ngModel)]="data.Designation" name="Designation" required ></textarea>
+          <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </div>
+  
+      <!--Contains mat-hint for characters count and has maxLengt set-->
+      <div class="form">
+        <mat-form-field color="accent" class="form-control">
+            <label>Ancien Code Piece : </label>
+          <input matInput #inputstate class="form-control" type="text" formControlName="AnCode" class="form-control" placeholder="AnCode" [(ngModel)]="data.AnCode" name="AnCode" required >
+          <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </div>
+  
+      <div class="form">
+        <mat-form-field color="accent" class="form-control">
+            <label>Unite : </label>
+          <input matInput class="form-control" type="text" placeholder="Unite" [(ngModel)]="data.Unite" name="Unite" formControlName="Unite">
+        </mat-form-field>
+      </div>
+  
+      <div class="form">
+        <mat-form-field color="accent" class="form-control">
+            <label>Code Fournisseur : </label>
+          <input matInput class="form-control" type="text" placeholder="CodeFournisseur" [(ngModel)]="data.CodeFournisseur" name="CodeFournisseur" formControlName="CodeFournisseur">
+        </mat-form-field>
+      </div>
+  
+
+
+
+      <div class="form">
+        <mat-form-field color="accent" class="form-control">
+            <label>Marque : </label>
+          <input matInput class="form-control" type="text" placeholder="Marque" [(ngModel)]="data.Marque" name="Marque" formControlName="Marque">
+        </mat-form-field>
+      </div>
+
+      <div class="form">
+        <mat-form-field color="accent" class="form-control">
+            <label>Machine : </label>
+          <input matInput class="form-control" type="text" placeholder="Machine" [(ngModel)]="data.Machine" name="Machine" formControlName="Machine">
+        </mat-form-field>
+      </div>
+
+      <div class="form">
+        <mat-form-field color="accent" class="form-control">
+            <label>Numero serie : </label>
+          <input matInput class="form-control" type="text" placeholder="NumSerie" [(ngModel)]="data.NumSerie" name="NumSerie" formControlName="NumSerie">
+        </mat-form-field>
+      </div>
+
+      <div class="form">
+        <mat-form-field color="accent" class="form-control">
+            <label>Centre Cout : </label>
+          <input matInput class="form-control" type="text" placeholder="CentreCout" [(ngModel)]="data.CentreCout" name="CentreCout" formControlName="CentreCout">
+        </mat-form-field>
+      </div>
+
+      <div class="form">
+      <mat-form-field class="example-half-width" class="form-control">
+        <label>Analyse 1 : </label>
+        <select title="Analyse1" formControlName="Analyse1"  >
+          <option [ngValue]="null" disabled>Choisir une option</option>
+          <option value="Importée">Importée</option>
+          <option value="Local">Local</option>
+        </select>
+      </mat-form-field>
+    </div>
+
+
+
+
+      <div class="form">
+               <mat-form-field class="example-half-width" class="form-control">
+              <label>Analyse 2 : </label>
+              <select title="Analyse2" formControlName="Analyse2">
+                <option [ngValue]="null" disabled>Choisir une option</option>
+                <option value="Mécanique">Mécanique</option>
+                <option value="Electrique">Electrique</option>
+              </select>
+            </mat-form-field>
+      </div>
+
+      <div class="form">
+        <mat-form-field class="example-half-width" class="form-control">
+            <label>Analyse 3 : </label>
+            
+          <select title="Analyse3" id="Analyse3" formControlName="Analyse3">
+              <option [ngValue]="null" disabled>Choisir une option</option>
+              <option value="Equipements">Equipements</option>
+              <option value="Piéce standards">Piéce standards</option>
+              <option value="Pièces Spécifiques Machines">Pièces Spécifiques Machines</option>
+            </select>
+          </mat-form-field>
+      </div>
+
+      <div class="form">
+        <mat-form-field color="accent" class="form-control">
+            <label>if cc : </label>
+          <input matInput class="form-control" type="text" placeholder="IF_CC" [(ngModel)]="data.IF_CC" name="IF_CC" formControlName="IF_CC">
+        </mat-form-field>
+      </div>
+
+      <div class="form">
+        <mat-form-field color="accent" class="form-control">
+            <label>Z stockage : </label>
+          <input matInput class="form-control" type="text" placeholder="ZStockage" [(ngModel)]="data.ZStockage" name="ZStockage" formControlName="ZStockage">
+        </mat-form-field>
+      </div>
+
+      <div class="form">
+        <mat-form-field color="accent" class="form-control">
+            <label>quantité de stock : </label>
+          <input matInput class="form-control" type="text" placeholder="QteStock" [(ngModel)]="data.QteStock" name="QteStock" formControlName="QteStock">
+        </mat-form-field>
+      </div>
+
+      <div class="form">
+        <mat-form-field class="example-half-width" appearance="fill" class="form-control">
+          <label>Date d'achat : </label>
+          <input matInput  class="form-control" type="date" id="DateAchat" class="example-half-width" name="DateAchat" placeholder="d" formControlName="DateAchat" >
+        </mat-form-field>
+      </div>
+
+      <div class="form">
+        <mat-form-field class="example-half-width" appearance="fill" class="form-control">
+          <label>Date fabrication : </label>
+          <input matInput class="form-control" type="date"  name="DateFabrication" class="example-half-width" placeholder="date Fabrication" id="DateFabrication" formControlName="DateFabrication" >
+        </mat-form-field>
+      </div>
+
+
+      <div class="form">
+        <mat-form-field color="accent" class="form-control">
+            <label>Stock alerte : </label>
+          <input matInput class="form-control" type="text" placeholder="StockAlerte" [(ngModel)]="data.StockAlerte" name="StockAlerte" formControlName="StockAlerte">
+        </mat-form-field>
+      </div>
+
+      <div class="form">
+        <mat-form-field color="accent" class="form-control">
+            <label>Quantite commande : </label>
+          <input matInput class="form-control" type="text" placeholder="QteCmd" [(ngModel)]="data.QteCmd" name="QteCmd" formControlName="QteCmd">
+        </mat-form-field>
+      </div>
+
+      <div class="form">
+        <mat-form-field color="accent" class="form-control">
+            <label>Reference fournisseur: </label>
+          <input matInput class="form-control" type="text" placeholder="RefFournisseur" [(ngModel)]="data.RefFournisseur" name="RefFournisseur" formControlName="RefFournisseur">
+        </mat-form-field>
+      </div>
+
+
+      <div class="form">
+        <mat-form-field color="accent" class="form-control">
+            <label>Prix d'achat piece :</label>
+          <input matInput class="form-control" type="text" placeholder="PAchat" [(ngModel)]="data.PAchat" name="PAchat" formControlName="PAchat">
+        </mat-form-field>
+      </div>
+
+
+      <div class="form">
+        <mat-form-field  class="form-control">
+            <label>Obsolete :</label>
+          <input matInput class="form-control" type="text" placeholder="on/off" [(ngModel)]="data.Obsolete" name="Obsolete" formControlName="Obsolete">
+        </mat-form-field>
+      </div>
+
+  
+      <div mat-dialog-actions>
+        <button mat-button type="submit"  (click)="confirmAdd()">Ajouter</button>
+        <button mat-button (click)="onNoClick()" tabindex="-1" type="reset">Annuler</button>
+      </div>
+    </form>
+  </div>
+  

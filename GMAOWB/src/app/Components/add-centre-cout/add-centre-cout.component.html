@@ -1,0 +1,59 @@
+<section class="main-banner">
+    <div class="banner-content">
+      <div class="banner-caption">
+        <div class="scrollmenu">
+          <a href="http://localhost:4200/addPiece"> Fiche piece </a>
+          <a href="http://localhost:4200/listPieces">Liste des pieces</a>
+          <a href="http://localhost:4200/files">Documents techniques </a>
+          <a href="http://localhost:4200/compteurEq">Compteurs equipements</a>
+          <a href="http://localhost:4200/listPreventive">Liste des préventives</a>
+          <a href="http://localhost:4200/parametrePreventive">Parametres préventives </a>
+          <a href="http://localhost:4200/addCentreCout">Fiche Centre cout </a>
+          <a href="http://localhost:4200/listCentreCout">Liste Centre cout </a>
+        </div>
+      </div>
+  <h1>Fiche Centre Cout</h1>
+  <hr>
+      <form [formGroup]="AddCentreC" (ngSubmit)="onFormSubmit()">
+  
+        <div>
+          <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+            <label>CodeCC : </label>
+            <input matInput class="form-control" formControlName="CodeCC" class="example-full-width" id="CodeCC"
+              name="CodeCC" placeholder="_________________________">
+          </mat-form-field>
+  
+  <br>
+          <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+            <label>Désignation : </label>
+            <input matInput class="form-control" formControlName="Designation" id="Designation" class="example-full-width"
+              id="Designation" name="Designation" placeholder="_________________________">
+          </mat-form-field>
+        
+  
+        
+  
+          <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+            <label>Code ant : </label>
+            <input matInput class="form-control" type="text" id="CodeAnt" class="example-full-width"
+              formControlName="CodeAnt" placeholder="_________________________">
+          </mat-form-field>
+        <br>
+          <mat-form-field class="example-full-width" appearance="fill" class="form-control">
+            <label>Sequence : </label>
+            <input matInput class="form-control" type="text" id="Seq" class="example-full-width" formControlName="Seq"
+              placeholder="_________________________">
+          </mat-form-field>
+  
+        </div>
+  
+  
+        <div class="container-upload">
+          <button class="btn btn-primary" type="submit">Ajouter</button>
+          <button class="btn btn-primary" type="reset">Annuler</button>
+        </div>
+  
+      </form>
+    </div>
+  
+  </section>

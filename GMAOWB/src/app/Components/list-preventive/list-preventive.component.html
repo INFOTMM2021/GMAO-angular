@@ -1,0 +1,122 @@
+<section class="main-banner">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="banner-content">
+  
+            <div class="banner-caption">
+              <div class="scrollmenu">
+                <a href="http://localhost:4200/addPiece"> Fiche piece </a>
+                <a href="http://localhost:4200/listPieces">Liste des pieces</a>
+                <a href="http://localhost:4200/files">Documents techniques </a>
+                <a href="http://localhost:4200/compteurEq">Compteurs equipements</a>
+                <a href="http://localhost:4200/listPreventive">Liste des préventives</a>
+                <a href="http://localhost:4200/parametrePreventive">Parametres préventives </a>
+                <a href="http://localhost:4200/addCentreCout">Fiche Centre cout </a>
+                <a href="http://localhost:4200/listCentreCout">Liste Centre cout </a>
+              </div>
+            </div>
+  
+  
+  
+  
+            <div class="example-header">
+              <h1>liste préventives</h1>
+              <h4><label>Rechercher : <br></label> </h4>
+              <mat-form-field>
+                <input matInput (keyup)="applyFilter($any($event.target).value)" placeholder="taper quelque chose">
+              </mat-form-field>
+            </div>
+  
+            <div class="example-container mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+  
+  
+  
+                <!-- Codepreventive Column -->
+                <ng-container matColumnDef="Codepreventive">
+                  <th mat-header-cell *matHeaderCellDef> Code preventive </th>
+                  <td mat-cell *matCellDef="let dd"> {{ dd.Codepreventive }} </td>
+                </ng-container>
+  
+                <!-- Description Column -->
+                <ng-container matColumnDef="Description">
+                  <th mat-header-cell *matHeaderCellDef> Description </th>
+                  <td mat-cell *matCellDef="let dd"> {{ dd.Description }} </td>
+                </ng-container>
+  
+                <!-- TypeIntervention Column -->
+                <ng-container matColumnDef="TypeIntervention">
+                  <th mat-header-cell *matHeaderCellDef> Type Intervention </th>
+                  <td mat-cell *matCellDef="let dd"> {{ dd.TypeIntervention }} </td>
+                </ng-container>
+  
+                <!-- DateDebut Column -->
+                <ng-container matColumnDef="DateDebut">
+                  <th mat-header-cell *matHeaderCellDef> DateDebut </th>
+                  <td mat-cell *matCellDef="let dd"> {{ dd.DateDebut }} </td>
+                </ng-container>
+  
+  
+  
+                <!-- Condition Column -->
+                <ng-container matColumnDef="Condition">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Condition </th>
+                  <td mat-cell *matCellDef="let dd"> {{ dd.Condition }} </td>
+                </ng-container>
+  
+  
+                <!-- DernierExécution Column -->
+                <ng-container matColumnDef="DernierExecution">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> DernierExecution</th>
+                  <td mat-cell *matCellDef="let dd"> {{ dd.DernierExecution }} </td>
+                </ng-container>
+  
+                <!-- ValDemExec Column -->
+                <ng-container matColumnDef="ValDemExec">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> ValDemExec </th>
+                  <td mat-cell *matCellDef="let dd"> {{ dd.ValDemExec }} </td>
+                </ng-container>
+  
+
+                                <!-- Statut Column -->
+                                <ng-container matColumnDef="Statut">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Statut </th>
+                                    <td mat-cell *matCellDef="let dd"> {{ dd.Statut }} </td>
+                                  </ng-container>
+  
+                Statut
+                <!-- actions -->
+                <ng-container matColumnDef="Actions">
+                  <mat-header-cell *matHeaderCellDef>
+                    <button mat-icon-button color="primary" >
+                      <mat-icon aria-label="Example icon-button with a heart icon">add</mat-icon>
+                    </button>
+                  </mat-header-cell>
+  
+                  <mat-cell *matCellDef="let dd; let i=index;" >
+                    <button mat-icon-button color="accent">
+                      <mat-icon aria-label="Edit">edit</mat-icon>
+                    </button>
+  
+                    <button>
+                      <mat-icon aria-label="Delete">delete</mat-icon>
+                    </button>
+                  </mat-cell>cf
+                </ng-container>
+  
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let dd; columns: displayedColumns;"></tr>
+  
+              </table>
+  
+              <mat-paginator [pageSizeOptions]="[10, 25, 50, 100]"></mat-paginator>
+            </div>
+  
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </section>

@@ -1,0 +1,82 @@
+div.scrollmenu {
+    background-color: #b5a281;
+    overflow: auto;
+    white-space: nowrap;
+  }
+  
+  div.scrollmenu a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+  }
+  .example-tree-progress-bar {
+    margin-left: 30px;
+  }
+  
+  .mat-tree-node {
+    padding: 0;
+    white-space: nowrap;
+  }
+  span.nodetree {
+    color: #99b3ff;
+    text-decoration:underline;
+    cursor:pointer;
+  }
+  
+  span.nodetree:hover { 
+    color:#4676b9; 
+  }
+  
+ 
+  
+  div.scrollmenu a:hover {
+    background-color: #777;
+  }
+  
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+
+  
+  .example-half-width {
+    width: 50%;
+  }
+
+  .example-section {
+    margin: 5px 0;
+  }
+  
+  .example-margin {
+    margin: 0 12px;
+  }
+  
+  ul{
+    list-style-type: none;
+    margin-top: 2px;
+  }
+.select{
+  width: 60%;
+}
+
+button{
+  font-weight:400;
+  color:#28a3a7;
+  margin-left: 15px;
+  line-height: 10px;
+  border-width: 0.05cqb;
+}
+
+label{
+  font-family:'Times New Roman', Times, serif;
+  font-size: 18px;
+}
+ 
